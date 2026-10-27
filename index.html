@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ASTRONIX LIFE OS: organize sua rotina, seus hábitos e suas metas em um só lugar.">
+
   <title>ASTRONIX | LIFE OS</title>
+
+  <meta name="description" content="Conheça o ASTRONIX LIFE OS, seu aliado na organização, planejamento e produtividade pessoal.">
 
   <style>
     * {
@@ -19,37 +21,41 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #080812;
+      background: #080810;
       color: #ffffff;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
     }
 
     header {
-      padding: 22px 8%;
+      padding: 20px 8%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #28213d;
+      justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 15px;
+      border-bottom: 1px solid #29213b;
     }
 
     .logo {
-      color: #b68cff;
+      color: #b68aff;
       font-size: 27px;
       font-weight: 900;
       letter-spacing: 3px;
     }
 
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
     nav a {
-      color: #ffffff;
+      color: white;
       text-decoration: none;
-      margin-left: 18px;
     }
 
     nav a:hover {
-      color: #b68cff;
+      color: #b68aff;
     }
 
     .hero {
@@ -62,46 +68,49 @@
       text-align: center;
       background: radial-gradient(
         ellipse at top,
-        #302050 0%,
-        #11101f 45%,
-        #080812 100%
+        #35204f,
+        #141020 50%,
+        #080810 100%
       );
     }
 
     .tag {
-      color: #c6a3ff;
-      border: 1px solid #7551a8;
+      color: #d4baff;
+      border: 1px solid #7650a7;
       padding: 7px 16px;
       border-radius: 30px;
       margin-bottom: 25px;
-      font-size: 13px;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
     h1 {
-      font-size: clamp(38px, 7vw, 70px);
-      line-height: 1.1;
-      margin-bottom: 22px;
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.15;
+      margin-bottom: 20px;
     }
 
     h1 span {
-      color: #b68cff;
+      color: #b68aff;
     }
 
     .hero p {
       max-width: 650px;
-      color: #c4c0d2;
+      color: #d0cada;
       font-size: 18px;
       margin-bottom: 30px;
     }
 
     .button {
       display: inline-block;
+      background: #9254f5;
+      color: white;
       padding: 15px 28px;
       border-radius: 9px;
-      background: #9254f5;
-      color: #ffffff;
       text-decoration: none;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
       transition: 0.2s;
     }
 
@@ -123,7 +132,7 @@
     .description {
       max-width: 720px;
       margin: 0 auto 35px;
-      color: #c4c0d2;
+      color: #c6c1d2;
     }
 
     .features {
@@ -137,20 +146,20 @@
     }
 
     .feature {
-      background: #141321;
-      border: 1px solid #302642;
+      padding: 25px;
+      background: #151321;
+      border: 1px solid #302542;
       border-radius: 14px;
-      padding: 28px 20px;
       text-align: left;
     }
 
     .feature h3 {
-      color: #c6a3ff;
-      margin-bottom: 12px;
+      color: #c7a6ff;
+      margin-bottom: 10px;
     }
 
     .feature p {
-      color: #c4c0d2;
+      color: #c6c1d2;
     }
 
     .product {
@@ -158,37 +167,37 @@
       margin: auto;
       padding: 40px 25px;
       border: 1px solid #8b5bd1;
-      background: linear-gradient(145deg, #211831, #11101c);
       border-radius: 20px;
+      background: linear-gradient(145deg, #211831, #11101c);
     }
 
     .product h3 {
-      font-size: 27px;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-size: 48px;
-      font-weight: bold;
-      color: #c6a3ff;
-      margin: 15px 0;
+      font-size: 28px;
+      margin-bottom: 12px;
     }
 
     .product p {
-      color: #c4c0d2;
-      margin-bottom: 25px;
+      color: #d0cada;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      color: #c7a6ff;
+      font-size: 48px;
+      font-weight: bold;
+      margin: 15px 0;
     }
 
     .notice {
       color: #aaa4ba;
       font-size: 13px;
-      margin-top: 15px;
+      margin-top: 16px;
     }
 
     footer {
       padding: 28px 8%;
+      border-top: 1px solid #29213b;
       text-align: center;
-      border-top: 1px solid #28213d;
       color: #aaa4ba;
       font-size: 14px;
     }
@@ -198,13 +207,16 @@
         flex-direction: column;
       }
 
-      nav a {
-        margin: 0 7px;
+      nav {
+        gap: 14px;
       }
 
       .hero {
-        padding-top: 65px;
-        padding-bottom: 65px;
+        padding: 65px 6%;
+      }
+
+      section {
+        padding: 55px 6%;
       }
     }
   </style>
@@ -223,14 +235,20 @@
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="tag">TECNOLOGIA • ORGANIZAÇÃO • PRODUTIVIDADE</div>
 
-      <h1>Transforme sua rotina com a <span>ASTRONIX</span></h1>
+    <section class="hero" id="inicio">
+      <div class="tag">
+        TECNOLOGIA • ORGANIZAÇÃO • PRODUTIVIDADE
+      </div>
+
+      <h1>
+        Transforme sua rotina com a
+        <span>ASTRONIX</span>
+      </h1>
 
       <p>
         Conheça o ASTRONIX LIFE OS, um produto digital
-        desenvolvido para ajudar você a organizar suas tarefas,
+        criado para ajudar você a organizar suas tarefas,
         acompanhar seus hábitos e planejar suas metas.
       </p>
 
@@ -243,27 +261,41 @@
       <h2>Sobre a ASTRONIX</h2>
 
       <p class="description">
-        A ASTRONIX nasceu para transformar ideias em soluções
-        digitais práticas e acessíveis. Trabalhamos com criatividade,
-        dedicação e inovação para ajudar pessoas a organizar a vida
-        e desenvolver hábitos mais produtivos.
+        A ASTRONIX é uma marca criada para transformar
+        ideias em soluções digitais inovadoras. Nosso
+        objetivo é tornar a tecnologia uma aliada na
+        organização pessoal e na produtividade.
+        Trabalhamos com dedicação, criatividade e
+        compromisso para oferecer ferramentas práticas
+        e acessíveis.
       </p>
 
       <div class="features">
+
         <article class="feature">
           <h3>📅 Organização</h3>
-          <p>Planeje tarefas e organize melhor sua rotina diária.</p>
+          <p>
+            Planeje suas tarefas e organize melhor
+            sua rotina diária.
+          </p>
         </article>
 
         <article class="feature">
-          <h3>🎯 Metas</h3>
-          <p>Registre seus objetivos e acompanhe seu progresso.</p>
+          <h3>🎯 Metas pessoais</h3>
+          <p>
+            Registre seus objetivos e acompanhe
+            seu desenvolvimento.
+          </p>
         </article>
 
         <article class="feature">
           <h3>⚡ Produtividade</h3>
-          <p>Tenha um espaço para organizar prioridades e hábitos.</p>
+          <p>
+            Organize suas prioridades e desenvolva
+            hábitos mais produtivos.
+          </p>
         </article>
+
       </div>
     </section>
 
@@ -271,24 +303,25 @@
       <h2>Conheça nosso produto</h2>
 
       <p class="description">
-        Um planejamento digital pensado para deixar sua rotina
-        mais organizada e facilitar o acompanhamento das suas metas.
+        Uma solução digital para ajudar você a planejar
+        suas atividades, organizar seus objetivos e
+        acompanhar seus hábitos.
       </p>
 
       <div class="product">
         <h3>ASTRONIX LIFE OS</h3>
 
         <p>
-          Seu espaço para planejar tarefas, acompanhar hábitos,
-          organizar objetivos pessoais e revisar sua semana.
+          Seu espaço de planejamento pessoal para
+          tarefas, hábitos, metas e revisão semanal.
         </p>
 
         <div class="price">R$ 9,90</div>
 
-        <!-- TROQUE O LINK ABAIXO PELO SEU LINK DA KIWIFY -->
+        <!-- LINK REAL DA KIWIFY -->
         <a
           class="button"
-          href="COLOQUE_AQUI_SEU_LINK_DA_KIWIFY"
+          href="https://pay.kiwify.com.br/jU2FSqo"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -296,10 +329,12 @@
         </a>
 
         <div class="notice">
-          O pagamento será realizado na página de checkout da Kiwify.
+          Você será direcionado ao checkout da Kiwify
+          para conferir as informações e realizar o pagamento.
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
