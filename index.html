@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080810">
-  <meta name="description" content="ASTRONIX LIFE OS — organize sua rotina, acompanhe seus hábitos e transforme seus objetivos em ações.">
-  <title>ASTRONIX — Transforme sua rotina</title>
+  <meta name="description" content="ASTRONIX LIFE OS: organize sua rotina, seus hábitos e suas metas em um só lugar.">
+  <title>ASTRONIX | LIFE OS</title>
 
   <style>
     * {
@@ -20,483 +19,293 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #080810;
-      color: #f5f5ff;
+      font-family: Arial, sans-serif;
+      background: #080812;
+      color: #ffffff;
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1100px, 90%);
-      margin: auto;
-    }
-
     header {
-      border-bottom: 1px solid #252438;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      background: rgba(8, 8, 16, 0.94);
-      backdrop-filter: blur(12px);
-      z-index: 10;
-    }
-
-    nav {
+      padding: 22px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      border-bottom: 1px solid #28213d;
       flex-wrap: wrap;
+      gap: 12px;
     }
 
     .logo {
-      font-size: 25px;
+      color: #b68cff;
+      font-size: 27px;
       font-weight: 900;
       letter-spacing: 3px;
-      color: #a78bfa;
     }
 
-    .logo span {
-      color: #53f5b5;
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 18px;
     }
 
-    .links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      font-size: 14px;
-      color: #c8c5dd;
-    }
-
-    .links a:hover {
-      color: #53f5b5;
+    nav a:hover {
+      color: #b68cff;
     }
 
     .hero {
-      padding: 100px 0 90px;
+      min-height: 75vh;
+      padding: 90px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background:
-        radial-gradient(ellipse at top, #382060 0%, transparent 55%);
+      background: radial-gradient(
+        ellipse at top,
+        #302050 0%,
+        #11101f 45%,
+        #080812 100%
+      );
     }
 
     .tag {
-      display: inline-block;
-      border: 1px solid #6545a5;
+      color: #c6a3ff;
+      border: 1px solid #7551a8;
+      padding: 7px 16px;
       border-radius: 30px;
-      padding: 7px 15px;
-      color: #c7b5ff;
-      font-size: 13px;
       margin-bottom: 25px;
+      font-size: 13px;
     }
 
     h1 {
-      font-size: clamp(40px, 8vw, 75px);
-      line-height: 1.08;
-      margin-bottom: 24px;
-      letter-spacing: -2px;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, #b59aff, #53f5b5);
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: 0 auto 30px;
-      color: #c5c2d7;
-      font-size: 18px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 23px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .btn-primary {
-      background: #a78bfa;
-      color: #100a20;
-    }
-
-    .btn-primary:hover {
-      background: #53f5b5;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 1px solid #48415f;
-      color: #fff;
-    }
-
-    .btn-secondary:hover {
-      border-color: #a78bfa;
-    }
-
-    section {
-      padding: 75px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: clamp(28px, 5vw, 43px);
-      margin-bottom: 15px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #aaa7c0;
-      max-width: 650px;
-      margin: 0 auto 40px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: #11111e;
-      border: 1px solid #28263d;
-      border-radius: 18px;
-      padding: 28px;
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #8d6ee0;
-    }
-
-    .icon {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #aaa7c0;
-      font-size: 15px;
-    }
-
-    .product {
-      background: linear-gradient(135deg, #171128, #10101a);
-      border: 1px solid #49346d;
-      border-radius: 24px;
-      padding: 40px;
-      text-align: center;
-      max-width: 760px;
-      margin: auto;
-    }
-
-    .status {
-      display: inline-block;
-      background: #30264a;
-      color: #d5c5ff;
-      border-radius: 30px;
-      padding: 6px 13px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
-
-    .product h3 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .product p {
-      color: #c5c2d7;
+      font-size: clamp(38px, 7vw, 70px);
+      line-height: 1.1;
       margin-bottom: 22px;
     }
 
-    .steps {
-      max-width: 760px;
-      margin: auto;
+    h1 span {
+      color: #b68cff;
     }
 
-    .step {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 25px;
-      align-items: flex-start;
+    .hero p {
+      max-width: 650px;
+      color: #c4c0d2;
+      font-size: 18px;
+      margin-bottom: 30px;
     }
 
-    .number {
-      min-width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #28203f;
-      color: #53f5b5;
+    .button {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 9px;
+      background: #9254f5;
+      color: #ffffff;
+      text-decoration: none;
       font-weight: bold;
+      transition: 0.2s;
     }
 
-    .step p {
-      color: #aaa7c0;
+    .button:hover {
+      background: #ad80ff;
+      transform: translateY(-2px);
     }
 
-    details {
-      background: #11111e;
-      border: 1px solid #28263d;
-      border-radius: 12px;
-      padding: 20px;
+    section {
+      padding: 75px 8%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .description {
+      max-width: 720px;
+      margin: 0 auto 35px;
+      color: #c4c0d2;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(210px, 1fr)
+      );
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .feature {
+      background: #141321;
+      border: 1px solid #302642;
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: left;
+    }
+
+    .feature h3 {
+      color: #c6a3ff;
       margin-bottom: 12px;
     }
 
-    summary {
-      cursor: pointer;
+    .feature p {
+      color: #c4c0d2;
+    }
+
+    .product {
+      max-width: 650px;
+      margin: auto;
+      padding: 40px 25px;
+      border: 1px solid #8b5bd1;
+      background: linear-gradient(145deg, #211831, #11101c);
+      border-radius: 20px;
+    }
+
+    .product h3 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 48px;
       font-weight: bold;
+      color: #c6a3ff;
+      margin: 15px 0;
     }
 
-    details p {
-      color: #aaa7c0;
-      margin-top: 12px;
+    .product p {
+      color: #c4c0d2;
+      margin-bottom: 25px;
     }
 
-    .cta {
-      text-align: center;
-      background: radial-gradient(ellipse at center, #291843, transparent 70%);
+    .notice {
+      color: #aaa4ba;
+      font-size: 13px;
+      margin-top: 15px;
     }
 
     footer {
-      border-top: 1px solid #252438;
-      padding: 28px 0;
-      color: #89869f;
-      font-size: 13px;
+      padding: 28px 8%;
       text-align: center;
+      border-top: 1px solid #28213d;
+      color: #aaa4ba;
+      font-size: 14px;
     }
 
-    @media (max-width: 750px) {
-      .grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0 7px;
       }
 
       .hero {
-        padding: 75px 0;
-      }
-
-      .product {
-        padding: 28px 20px;
-      }
-
-      .links {
-        gap: 12px;
-      }
-
-      .step {
-        gap: 12px;
+        padding-top: 65px;
+        padding-bottom: 65px;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <a class="logo" href="#inicio">ASTRO<span>NIX</span></a>
 
-        <div class="links">
-          <a href="#recursos">Recursos</a>
-          <a href="#produto">Produto</a>
-          <a href="#como-funciona">Como funciona</a>
-          <a href="#duvidas">Dúvidas</a>
-        </div>
-      </nav>
-    </div>
+  <header>
+    <div class="logo">ASTRONIX</div>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#produto">Produto</a>
+    </nav>
   </header>
 
   <main>
     <section class="hero" id="inicio">
-      <div class="container">
-        <span class="tag">ASTRONIX LIFE OS · SUA NOVA FASE</span>
+      <div class="tag">TECNOLOGIA • ORGANIZAÇÃO • PRODUTIVIDADE</div>
 
-        <h1>Organize sua vida.<br><span>Construa seu futuro.</span></h1>
+      <h1>Transforme sua rotina com a <span>ASTRONIX</span></h1>
 
-        <p>
-          Uma maneira mais simples de organizar sua rotina,
-          acompanhar seus hábitos e transformar seus objetivos
-          em pequenas ações todos os dias.
-        </p>
+      <p>
+        Conheça o ASTRONIX LIFE OS, um produto digital
+        desenvolvido para ajudar você a organizar suas tarefas,
+        acompanhar seus hábitos e planejar suas metas.
+      </p>
 
-        <div class="buttons">
-          <a href="#produto" class="btn btn-primary">Conhecer o ASTRONIX</a>
-          <a href="#recursos" class="btn btn-secondary">Explorar recursos</a>
-        </div>
-      </div>
+      <a class="button" href="#produto">
+        CONHECER O PRODUTO
+      </a>
     </section>
 
-    <section id="recursos">
-      <div class="container">
-        <h2 class="section-title">Tudo começa com organização</h2>
+    <section id="sobre">
+      <h2>Sobre a ASTRONIX</h2>
 
-        <p class="section-subtitle">
-          Ferramentas para você planejar melhor seus dias e acompanhar
-          seu progresso sem complicar sua rotina.
-        </p>
+      <p class="description">
+        A ASTRONIX nasceu para transformar ideias em soluções
+        digitais práticas e acessíveis. Trabalhamos com criatividade,
+        dedicação e inovação para ajudar pessoas a organizar a vida
+        e desenvolver hábitos mais produtivos.
+      </p>
 
-        <div class="grid">
-          <article class="card">
-            <div class="icon">📅</div>
-            <h3>Planejamento diário</h3>
-            <p>Organize suas tarefas e tenha mais clareza sobre o que precisa fazer.</p>
-          </article>
+      <div class="features">
+        <article class="feature">
+          <h3>📅 Organização</h3>
+          <p>Planeje tarefas e organize melhor sua rotina diária.</p>
+        </article>
 
-          <article class="card">
-            <div class="icon">🎯</div>
-            <h3>Metas e objetivos</h3>
-            <p>Transforme grandes objetivos em etapas menores e mais fáceis de acompanhar.</p>
-          </article>
+        <article class="feature">
+          <h3>🎯 Metas</h3>
+          <p>Registre seus objetivos e acompanhe seu progresso.</p>
+        </article>
 
-          <article class="card">
-            <div class="icon">⚡</div>
-            <h3>Hábitos consistentes</h3>
-            <p>Acompanhe seus hábitos e construa uma rotina com mais consistência.</p>
-          </article>
-
-          <article class="card">
-            <div class="icon">📈</div>
-            <h3>Acompanhe seu progresso</h3>
-            <p>Observe sua evolução e identifique o que está funcionando para você.</p>
-          </article>
-
-          <article class="card">
-            <div class="icon">🧠</div>
-            <h3>Mais foco</h3>
-            <p>Defina prioridades e dedique sua atenção ao que realmente importa.</p>
-          </article>
-
-          <article class="card">
-            <div class="icon">🔄</div>
-            <h3>Revisão semanal</h3>
-            <p>Revise sua semana, ajuste seus planos e prepare os próximos passos.</p>
-          </article>
-        </div>
+        <article class="feature">
+          <h3>⚡ Produtividade</h3>
+          <p>Tenha um espaço para organizar prioridades e hábitos.</p>
+        </article>
       </div>
     </section>
 
     <section id="produto">
-      <div class="container">
-        <div class="product">
-          <span class="status">EM PREPARAÇÃO</span>
-          <h3>Conheça o ASTRONIX LIFE OS</h3>
-          <p>
-            Estamos preparando uma experiência para ajudar você
-            a organizar tarefas, metas e hábitos em um só lugar.
-            Novidades serão divulgadas quando o produto estiver pronto.
-          </p>
-          <a href="#como-funciona" class="btn btn-primary">Saiba mais</a>
-        </div>
-      </div>
-    </section>
+      <h2>Conheça nosso produto</h2>
 
-    <section id="como-funciona">
-      <div class="container">
-        <h2 class="section-title">Comece com três passos</h2>
+      <p class="description">
+        Um planejamento digital pensado para deixar sua rotina
+        mais organizada e facilitar o acompanhamento das suas metas.
+      </p>
 
-        <p class="section-subtitle">
-          Uma rotina melhor é construída um dia de cada vez.
+      <div class="product">
+        <h3>ASTRONIX LIFE OS</h3>
+
+        <p>
+          Seu espaço para planejar tarefas, acompanhar hábitos,
+          organizar objetivos pessoais e revisar sua semana.
         </p>
 
-        <div class="steps">
-          <div class="step">
-            <div class="number">01</div>
-            <div>
-              <h3>Defina suas prioridades</h3>
-              <p>Escolha o que é mais importante para você neste momento.</p>
-            </div>
-          </div>
+        <div class="price">R$ 9,90</div>
 
-          <div class="step">
-            <div class="number">02</div>
-            <div>
-              <h3>Organize suas ações</h3>
-              <p>Divida seus objetivos em tarefas pequenas e realistas.</p>
-            </div>
-          </div>
+        <!-- TROQUE O LINK ABAIXO PELO SEU LINK DA KIWIFY -->
+        <a
+          class="button"
+          href="COLOQUE_AQUI_SEU_LINK_DA_KIWIFY"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          COMPRAR AGORA
+        </a>
 
-          <div class="step">
-            <div class="number">03</div>
-            <div>
-              <h3>Acompanhe sua evolução</h3>
-              <p>Revise seu progresso e faça ajustes quando necessário.</p>
-            </div>
-          </div>
+        <div class="notice">
+          O pagamento será realizado na página de checkout da Kiwify.
         </div>
-      </div>
-    </section>
-
-    <section id="duvidas">
-      <div class="container">
-        <h2 class="section-title">Perguntas frequentes</h2>
-
-        <p class="section-subtitle">
-          Algumas informações importantes sobre o projeto.
-        </p>
-
-        <div class="steps">
-          <details>
-            <summary>O que é o ASTRONIX?</summary>
-            <p>É um projeto de organização pessoal focado em rotina, hábitos, metas e produtividade.</p>
-          </details>
-
-          <details>
-            <summary>O produto já está disponível?</summary>
-            <p>Ainda não. O produto está em preparação e esta página apresenta a proposta do projeto.</p>
-          </details>
-
-          <details>
-            <summary>Posso comprar pelo site?</summary>
-            <p>Ainda não há sistema de pagamento ou entrega automática habilitado neste site.</p>
-          </details>
-
-          <details>
-            <summary>Como vou saber das novidades?</summary>
-            <p>Volte a visitar esta página para acompanhar as futuras atualizações do ASTRONIX.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <h2 class="section-title">Seu próximo capítulo começa agora.</h2>
-        <p class="section-subtitle">
-          Organize suas ideias. Planeje suas ações. Continue evoluindo.
-        </p>
-        <a href="#inicio" class="btn btn-primary">Voltar ao início ↑</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>© 2026 ASTRONIX. Todos os direitos reservados.</p>
-      <p>Organização, foco e evolução — um dia de cada vez.</p>
-    </div>
+    <p>© 2026 ASTRONIX — Todos os direitos reservados.</p>
+    <p>Tecnologia para uma rotina mais organizada.</p>
   </footer>
+
 </body>
 </html>
