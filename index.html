@@ -1,401 +1,183 @@
 
-
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080810">
-  <meta name="description" content="Conheça o ASTRONIX LIFE OS, seu planner digital para organização pessoal, planejamento e produtividade.">
-  <title>ASTRONIX | LIFE OS</title>
-
+  <meta name="description" content="ASTRONIX — loja de produtos digitais para aprender, criar e organizar sua rotina.">
+  <title>ASTRONIX | Loja Digital</title>
   <style>
-    :root {
-      --bg: #080810;
-      --surface: #151321;
-      --purple: #a56bff;
-      --purple-dark: #7538d9;
-      --text: #ffffff;
-      --muted: #c5bfd2;
-      --border: #302542;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
-
-    a { color: inherit; }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      padding: 20px 8%;
-      border-bottom: 1px solid var(--border);
-      background: #0b0a13;
-    }
-
-    .logo {
-      color: var(--purple);
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: 3px;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover { color: var(--purple); }
-
-    .hero {
-      min-height: 78vh;
-      padding: 90px 8%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background:
-        radial-gradient(ellipse at top, #382052 0%, #171024 40%, #080810 78%);
-    }
-
-    .tag {
-      border: 1px solid #7952a9;
-      border-radius: 30px;
-      padding: 5px 16px;
-      margin-bottom: 25px;
-      color: #decaff;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-    }
-
-    h1 {
-      max-width: 900px;
-      font-size: clamp(38px, 7vw, 68px);
-      line-height: 1.15;
-      margin-bottom: 22px;
-    }
-
-    h1 span { color: var(--purple); }
-
-    .hero p {
-      max-width: 650px;
-      margin-bottom: 30px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 27px;
-      border-radius: 9px;
-      background: var(--purple-dark);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      background: var(--purple);
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 75px 8%;
-      text-align: center;
-    }
-
-    section h2 {
-      margin-bottom: 16px;
-      font-size: clamp(27px, 4vw, 36px);
-    }
-
-    .description {
-      max-width: 740px;
-      margin: 0 auto 35px;
-      color: var(--muted);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 20px;
-      margin-top: 35px;
-      text-align: left;
-    }
-
-    .feature {
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--surface);
-    }
-
-    .feature .emoji {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .feature h3 {
-      color: #c9a8ff;
-      margin-bottom: 8px;
-    }
-
-    .feature p { color: var(--muted); }
-
-    #produto { background: #0c0b14; }
-
-    .product {
-      max-width: 650px;
-      margin: 30px auto 0;
-      padding: 40px 25px;
-      border: 1px solid #8254bd;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #241834, #11101c);
-      box-shadow: 0 15px 50px #00000035;
-    }
-
-    .product-label {
-      color: #d7bcff;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .product h3 {
-      margin: 12px 0;
-      font-size: 30px;
-    }
-
-    .product p {
-      margin-bottom: 18px;
-      color: var(--muted);
-    }
-
-    .price {
-      margin: 18px 0;
-      color: var(--purple);
-      font-size: 46px;
-      font-weight: 900;
-    }
-
-    .benefits {
-      display: inline-block;
-      margin: 0 auto 25px;
-      text-align: left;
-      color: #e3ddea;
-    }
-
-    .benefits li { margin: 6px 0; }
-
-    .buy-button {
-      display: block;
-      max-width: 350px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      border-radius: 9px;
-      background: var(--purple-dark);
-      color: white;
-      font-weight: 900;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-
-    .buy-button:hover {
-      background: var(--purple);
-      transform: translateY(-2px);
-    }
-
-    .notice {
-      margin-top: 16px;
-      color: #aaa3b9;
-      font-size: 12px;
-    }
-
-    .cta {
-      background: radial-gradient(ellipse at center, #21132f, #080810 75%);
-    }
-
-    footer {
-      padding: 28px 8%;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: #aaa3b9;
-      font-size: 13px;
-    }
-
-    footer p + p { margin-top: 5px; }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        padding: 18px 5%;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .hero { padding: 65px 6%; }
-      section { padding: 55px 6%; }
-      .product { padding: 32px 18px; }
-    }
+    :root{--bg:#070707;--panel:#11100d;--gold:#eab94f;--gold2:#ffdc83;--muted:#b8b2a5;--line:rgba(234,185,79,.24);--white:#f7f4ed}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}
+    a{color:inherit;text-decoration:none} button{font:inherit}
+    .wrap{width:min(1160px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(7,7,7,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:2px;font-size:22px}
+    .mark{width:42px;height:42px;border:2px solid var(--gold);color:var(--gold);display:grid;place-items:center;transform:rotate(45deg);border-radius:10px;font-size:23px}
+    .mark span{transform:rotate(-45deg)} .brand small{display:block;font-size:9px;letter-spacing:4px;color:var(--gold);font-weight:600;margin-top:3px}
+    .links{display:flex;align-items:center;gap:25px;color:#ded8cb;font-size:13px}
+    .links a:hover{color:var(--gold2)} .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:linear-gradient(135deg,var(--gold2),#d69b27);color:#171107;font-weight:800;padding:13px 20px;cursor:pointer;box-shadow:0 5px 24px rgba(234,185,79,.18)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:var(--gold);padding:9px 12px;border-radius:9px}
+    .hero{position:relative;overflow:hidden;padding:88px 0 76px;background:radial-gradient(ellipse at 78% 45%,rgba(174,117,24,.22),transparent 35%),linear-gradient(110deg,#080808 35%,#171109 100%);border-bottom:1px solid var(--line)}
+    .hero:after{content:"A";position:absolute;right:7%;top:2%;font-size:360px;line-height:1;color:rgba(234,185,79,.045);font-weight:900;pointer-events:none}
+    .hero-content{position:relative;z-index:1;max-width:650px}
+    .eyebrow{color:var(--gold2);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:800}
+    h1{font-size:clamp(42px,7vw,76px);line-height:.98;margin:18px 0;letter-spacing:-2px}
+    h1 em{font-style:normal;color:var(--gold)}
+    .lead{max-width:560px;color:#c9c2b5;font-size:17px;line-height:1.7}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+    .btn.secondary{background:transparent;color:var(--gold2);border:1px solid var(--line);box-shadow:none}
+    .trust{display:flex;gap:24px;flex-wrap:wrap;margin-top:35px;color:#c6bdad;font-size:12px}
+    .trust span:before{content:"✦";color:var(--gold);margin-right:8px}
+    section{padding:68px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:26px}
+    .section-head h2{font-size:clamp(26px,4vw,38px);margin:9px 0 0}
+    .section-head p{color:var(--muted);font-size:13px;margin:0}
+    .categories{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}
+    .category{min-height:128px;padding:20px 15px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#17140e,#0d0d0c);transition:.2s}
+    .category:hover{transform:translateY(-4px);border-color:var(--gold)}
+    .category .ico{font-size:25px;color:var(--gold)} .category h3{font-size:14px;margin:13px 0 5px}.category p{font-size:11px;color:var(--muted);margin:0}
+    .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 22px}
+    .search{flex:1;min-width:210px;background:#111;border:1px solid var(--line);border-radius:12px;padding:13px 15px;color:white;outline:none}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:#111;border:1px solid var(--line);color:#d8cfbd;padding:10px 13px;border-radius:999px;cursor:pointer;font-size:12px}.filter.active,.filter:hover{background:var(--gold);color:#171107}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .product{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:linear-gradient(145deg,#17140f,#0e0e0d);display:flex;flex-direction:column}
+    .cover{height:174px;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(234,185,79,.22),transparent 52%),linear-gradient(135deg,#21190b,#090909);border-bottom:1px solid var(--line);position:relative}
+    .cover:before{content:"ASTRONIX";font-size:clamp(21px,3vw,30px);font-weight:900;letter-spacing:3px;color:rgba(255,220,131,.9);text-shadow:0 0 24px rgba(234,185,79,.45)}
+    .cover:after{content:attr(data-type);position:absolute;bottom:17px;font-size:9px;letter-spacing:3px;color:#d7c49a}
+    .product-body{padding:19px;display:flex;flex-direction:column;flex:1}
+    .tag{font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-weight:800}
+    .product h3{margin:9px 0 7px;font-size:19px}.product p{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 17px;flex:1}
+    .buyrow{display:flex;align-items:center;justify-content:space-between;gap:12px}.price{font-size:20px;font-weight:900;color:var(--gold2)}
+    .buy{padding:11px 15px;border-radius:10px;background:var(--gold);color:#171107;font-weight:800;font-size:12px}
+    .buy.disabled{background:#29251d;color:#9c927f;cursor:not-allowed}
+    .how{background:linear-gradient(180deg,#0a0a09,#11100c);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .step{padding:24px;border:1px solid var(--line);border-radius:15px;background:#100f0c}.step b{color:var(--gold);font-size:26px}.step h3{margin:13px 0 7px}.step p{color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+    .delivery{display:grid;grid-template-columns:1fr 1fr;gap:18px}.delivery-card{padding:25px;border-radius:16px;background:#11100d;border:1px solid var(--line)}.delivery-card h3{color:var(--gold2);margin-top:0}.delivery-card p{color:var(--muted);font-size:13px;line-height:1.7}
+    .cta{padding:42px;border:1px solid var(--gold);border-radius:20px;text-align:center;background:radial-gradient(ellipse at center,rgba(234,185,79,.15),transparent 65%),#0d0c09}.cta h2{font-size:clamp(25px,4vw,36px);margin:0 0 10px}.cta p{color:var(--muted);margin:0 0 22px}
+    footer{padding:30px 0;border-top:1px solid var(--line);color:#928a7b;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .notice{font-size:11px;color:#8f8779;line-height:1.6;margin-top:20px}
+    @media(max-width:850px){.links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#090909;border-bottom:1px solid var(--line);flex-direction:column}.links.open{display:flex}.menu{display:block}.nav-cta{display:none}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.hero{padding:65px 0 55px}.hero:after{font-size:230px;right:-12%;top:18%}.lead{font-size:15px}.categories{grid-template-columns:repeat(2,1fr)}.products,.steps,.delivery{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:9px}.cover{height:155px}.trust{gap:12px}}
   </style>
 </head>
-
 <body>
-  <header>
-    <a class="logo" href="#inicio" style="text-decoration:none">
-      ASTRONIX
-    </a>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio"><span class="mark"><span> A </span></span><span>ASTRONIX<small>LOJA DIGITAL</small></span></a>
+    <nav class="links" id="links"><a href="#inicio">Início</a><a href="#categorias">Categorias</a><a href="#produtos">Produtos</a><a href="#como-funciona">Como funciona</a><a href="#sobre">Sobre</a></nav>
+    <a class="nav-cta" href="#produtos">Explorar produtos ↗</a>
+    <button class="menu" id="menu" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
 
-    <nav aria-label="Navegação principal">
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre nós</a>
-      <a href="#beneficios">Benefícios</a>
-      <a href="#produto">Produto</a>
-    </nav>
-  </header>
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-content">
+      <div class="eyebrow">Bem-vindo à ASTRONIX</div>
+      <h1>SUA JORNADA<br>COMEÇA <em>AQUI.</em></h1>
+      <p class="lead">E-books, cursos, planners, templates e ferramentas digitais para ajudar você a aprender, criar e organizar suas ideias.</p>
+      <div class="hero-actions"><a class="btn" href="#produtos">Explorar produtos →</a><a class="btn secondary" href="#como-funciona">Como funciona</a></div>
+      <div class="trust"><span>Compra pelo checkout oficial</span><span>Produtos digitais</span><span>Suporte ao cliente</span></div>
+    </div>
+  </section>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="tag">TECNOLOGIA • ORGANIZAÇÃO • PRODUTIVIDADE</div>
-
-      <h1>
-        Sua rotina merece uma nova versão.
-        <span>Conheça a ASTRONIX.</span>
-      </h1>
-
-      <p>
-        Organize suas tarefas, planeje seus objetivos e tenha
-        mais clareza na sua rotina com o ASTRONIX LIFE OS,
-        nosso planner digital.
-      </p>
-
-      <a class="button" href="#produto">CONHECER O LIFE OS</a>
-    </section>
-
-    <section id="sobre">
-      <h2>Bem-vindo à ASTRONIX</h2>
-
-      <p class="description">
-        Somos uma marca digital que busca transformar ideias
-        em soluções práticas. Nosso objetivo é tornar a
-        organização e o planejamento mais acessíveis para
-        quem deseja cuidar melhor da própria rotina.
-      </p>
-    </section>
-
-    <section id="beneficios">
-      <h2>Organize suas ideias. Planeje suas metas.</h2>
-
-      <p class="description">
-        Tenha um espaço para planejar suas atividades e
-        acompanhar seus objetivos de maneira organizada.
-      </p>
-
-      <div class="features">
-        <article class="feature">
-          <div class="emoji">📅</div>
-          <h3>Organização diária</h3>
-          <p>Planeje tarefas e compromissos para visualizar melhor sua rotina.</p>
-        </article>
-
-        <article class="feature">
-          <div class="emoji">🎯</div>
-          <h3>Metas e objetivos</h3>
-          <p>Registre seus objetivos e acompanhe seu progresso.</p>
-        </article>
-
-        <article class="feature">
-          <div class="emoji">⚡</div>
-          <h3>Produtividade</h3>
-          <p>Defina prioridades e organize melhor o seu tempo.</p>
-        </article>
+  <section id="categorias">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Encontre o que precisa</div><h2>Explore por categoria</h2></div><p>Conteúdo digital em um só lugar.</p></div>
+      <div class="categories">
+        <a class="category" href="#produtos" data-jump="ebook"><div class="ico">▤</div><h3>E-books</h3><p>Conhecimento em PDF</p></a>
+        <a class="category" href="#produtos" data-jump="curso"><div class="ico">▶</div><h3>Cursos</h3><p>Aprenda no seu ritmo</p></a>
+        <a class="category" href="#produtos" data-jump="template"><div class="ico">▦</div><h3>Templates</h3><p>Modelos prontos</p></a>
+        <a class="category" href="#produtos" data-jump="arte"><div class="ico">✧</div><h3>Artes digitais</h3><p>Recursos criativos</p></a>
+        <a class="category" href="#produtos" data-jump="planner"><div class="ico">☷</div><h3>Planners</h3><p>Organize sua rotina</p></a>
+        <a class="category" href="#produtos" data-jump="ferramenta"><div class="ico">⚙</div><h3>Ferramentas</h3><p>Mais produtividade</p></a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="produto">
-      <h2>Conheça nosso produto</h2>
-
-      <p class="description">
-        Dê o primeiro passo para uma rotina mais organizada
-        com o ASTRONIX LIFE OS.
-      </p>
-
-      <div class="product">
-        <div class="product-label">PRODUTO DIGITAL ASTRONIX</div>
-
-        <h3>ASTRONIX LIFE OS</h3>
-
-        <p>
-          Um planner digital para ajudar você a organizar
-          tarefas, hábitos, metas e planejamento pessoal.
-        </p>
-
-        <ul class="benefits">
-          <li>✓ Planejamento da rotina</li>
-          <li>✓ Organização de tarefas</li>
-          <li>✓ Acompanhamento de objetivos</li>
-          <li>✓ Mais clareza nas prioridades</li>
-        </ul>
-
-        <div class="price">R$ 9,90</div>
-
-        <a
-          class="buy-button"
-          href="https://pay.cakto.com.br/a44hdfo_1250534"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          COMPRAR AGORA →
-        </a>
-
-        <div class="notice">
-          Você será direcionado à página de pagamento da Cakto.
-          Confira as condições apresentadas antes de concluir a compra.
+  <section id="produtos">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Loja ASTRONIX</div><h2>Nossos produtos</h2></div><p>Escolha seu próximo passo.</p></div>
+      <div class="toolbar">
+        <input class="search" id="search" type="search" placeholder="Buscar um produto...">
+        <div class="filters">
+          <button class="filter active" data-filter="todos">Todos</button>
+          <button class="filter" data-filter="planner">Planners</button>
+          <button class="filter" data-filter="ebook">E-books</button>
+          <button class="filter" data-filter="curso">Cursos</button>
+          <button class="filter" data-filter="template">Templates</button>
         </div>
       </div>
-    </section>
+      <div class="products" id="productGrid">
+        <article class="product" data-category="planner" data-name="astronix life os planner organização produtividade">
+          <div class="cover" data-type="PLANNER DIGITAL"></div>
+          <div class="product-body"><span class="tag">Planner digital</span><h3>ASTRONIX LIFE OS</h3><p>Um planner digital para ajudar você a organizar tarefas, rotina e objetivos em um só lugar.</p><div class="buyrow"><span class="price">R$ 9,90</span><a class="buy" href="https://pay.cakto.com.br/a44hdfo_1250534" target="_blank" rel="noopener">Comprar agora ↗</a></div></div>
+        </article>
+        <article class="product" data-category="ebook" data-name="marketing digital do zero ebook">
+          <div class="cover" data-type="E-BOOK"></div>
+          <div class="product-body"><span class="tag">E-book</span><h3>Marketing Digital do Zero</h3><p>Material introdutório para conhecer conceitos de marketing digital e começar a estudar o tema.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
+        </article>
+        <article class="product" data-category="curso" data-name="empreendedor digital curso">
+          <div class="cover" data-type="CURSO ONLINE"></div>
+          <div class="product-body"><span class="tag">Curso online</span><h3>Empreendedor Digital</h3><p>Conteúdo educativo sobre ideias, planejamento e ferramentas para projetos digitais.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
+        </article>
+        <article class="product" data-category="template" data-name="kit templates criativos">
+          <div class="cover" data-type="PACK DE TEMPLATES"></div>
+          <div class="product-body"><span class="tag">Templates</span><h3>Kit de Templates</h3><p>Modelos editáveis para apoiar a criação de conteúdos e materiais digitais.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
+        </article>
+        <article class="product" data-category="ferramenta" data-name="planilha organização ferramenta">
+          <div class="cover" data-type="FERRAMENTA DIGITAL"></div>
+          <div class="product-body"><span class="tag">Ferramenta</span><h3>Planilha de Organização</h3><p>Uma ferramenta prática para acompanhar tarefas, metas e atividades.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
+        </article>
+        <article class="product" data-category="arte" data-name="pack criativo artes digitais">
+          <div class="cover" data-type="ARTES DIGITAIS"></div>
+          <div class="product-body"><span class="tag">Artes digitais</span><h3>Pack Criativo</h3><p>Recursos gráficos para projetos pessoais e criação de conteúdo.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
+        </article>
+      </div>
+      <p class="notice">Atenção: no momento, somente o ASTRONIX LIFE OS possui link de checkout informado. Os demais itens são demonstrações do catálogo e não estão disponíveis para compra. Valores, conteúdos e formas de entrega dos próximos produtos serão publicados após configuração.</p>
+    </div>
+  </section>
 
-    <section class="cta">
-      <h2>Comece a organizar sua rotina hoje.</h2>
+  <section class="how" id="como-funciona">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Simples e direto</div><h2>Como funciona a compra</h2></div></div>
+      <div class="steps">
+        <div class="step"><b>01</b><h3>Escolha seu produto</h3><p>Confira a descrição e veja se o material atende ao que você procura.</p></div>
+        <div class="step"><b>02</b><h3>Finalize o pagamento</h3><p>Quando disponível, o botão leva ao checkout oficial do produto.</p></div>
+        <div class="step"><b>03</b><h3>Receba o acesso</h3><p>A entrega será feita pelo formato informado na página do produto: arquivo digital ou área de membros.</p></div>
+      </div>
+    </div>
+  </section>
 
-      <p class="description">
-        Conheça o ASTRONIX LIFE OS e descubra uma nova forma
-        de planejar seus dias.
-      </p>
+  <section id="sobre">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Nossa proposta</div><h2>Digital para ir mais longe</h2></div></div>
+      <div class="delivery">
+        <div class="delivery-card"><h3>↓ Arquivos para baixar</h3><p>E-books, planners, templates e outros materiais digitais poderão ser entregues por link de download, conforme as condições de cada produto.</p></div>
+        <div class="delivery-card"><h3>◎ Área de membros</h3><p>Cursos e conteúdos organizados poderão ficar disponíveis em uma área de acesso, com instruções de entrada enviadas após a compra.</p></div>
+      </div>
+      <p class="notice">A forma de entrega varia conforme o produto. Não anuncie acesso imediato, suporte 24 horas ou acesso vitalício sem que esses serviços estejam realmente configurados e disponíveis.</p>
+    </div>
+  </section>
 
-      <a class="button" href="#produto">QUERO CONHECER</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 ASTRONIX — Todos os direitos reservados.</p>
-    <p>Tecnologia, organização e produtividade.</p>
-  </footer>
+  <section>
+    <div class="wrap"><div class="cta"><div class="eyebrow">ASTRONIX DIGITAL STORE</div><h2>Aprenda. Crie. Conquiste.</h2><p>Encontre recursos digitais para transformar suas ideias em ação.</p><a class="btn" href="#produtos">Conhecer a loja →</a></div></div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 ASTRONIX. Todos os direitos reservados.</span><span>Loja de produtos digitais</span></div></footer>
+<script>
+  const menu=document.getElementById('menu'), links=document.getElementById('links');
+  menu.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  let current='todos';
+  const cards=[...document.querySelectorAll('.product')], search=document.getElementById('search');
+  function filterCards(){const q=search.value.toLowerCase().trim();cards.forEach(card=>{const okCat=current==='todos'||card.dataset.category===current;const okText=card.dataset.name.includes(q)||card.innerText.toLowerCase().includes(q);card.style.display=okCat&&okText?'flex':'none';});}
+  document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');current=btn.dataset.filter;filterCards();}));
+  search.addEventListener('input',filterCards);
+  document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',()=>{current=a.dataset.jump;document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b.dataset.filter===current)});filterCards();}));
+</script>
 </body>
 </html>
