@@ -1,5 +1,6 @@
 
-!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,16 +9,21 @@
   <title>ASTRONIX | Loja Digital</title>
   <style>
     :root{--bg:#070707;--panel:#11100d;--gold:#eab94f;--gold2:#ffdc83;--muted:#b8b2a5;--line:rgba(234,185,79,.24);--white:#f7f4ed}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}
-    a{color:inherit;text-decoration:none} button{font:inherit}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
     .wrap{width:min(1160px,92%);margin:auto}
     header{position:sticky;top:0;z-index:20;background:rgba(7,7,7,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
     .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:2px;font-size:22px}
     .mark{width:42px;height:42px;border:2px solid var(--gold);color:var(--gold);display:grid;place-items:center;transform:rotate(45deg);border-radius:10px;font-size:23px}
-    .mark span{transform:rotate(-45deg)} .brand small{display:block;font-size:9px;letter-spacing:4px;color:var(--gold);font-weight:600;margin-top:3px}
+    .mark span{transform:rotate(-45deg)}
+    .brand small{display:block;font-size:9px;letter-spacing:4px;color:var(--gold);font-weight:600;margin-top:3px}
     .links{display:flex;align-items:center;gap:25px;color:#ded8cb;font-size:13px}
-    .links a:hover{color:var(--gold2)} .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:linear-gradient(135deg,var(--gold2),#d69b27);color:#171107;font-weight:800;padding:13px 20px;cursor:pointer;box-shadow:0 5px 24px rgba(234,185,79,.18)}
+    .links a:hover{color:var(--gold2)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:linear-gradient(135deg,var(--gold2),#d69b27);color:#171107;font-weight:800;padding:13px 20px;cursor:pointer;box-shadow:0 5px 24px rgba(234,185,79,.18)}
     .menu{display:none;background:none;border:1px solid var(--line);color:var(--gold);padding:9px 12px;border-radius:9px}
     .hero{position:relative;overflow:hidden;padding:88px 0 76px;background:radial-gradient(ellipse at 78% 45%,rgba(174,117,24,.22),transparent 35%),linear-gradient(110deg,#080808 35%,#171109 100%);border-bottom:1px solid var(--line)}
     .hero:after{content:"A";position:absolute;right:7%;top:2%;font-size:360px;line-height:1;color:rgba(234,185,79,.045);font-weight:900;pointer-events:none}
@@ -37,10 +43,14 @@
     .categories{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}
     .category{min-height:128px;padding:20px 15px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#17140e,#0d0d0c);transition:.2s}
     .category:hover{transform:translateY(-4px);border-color:var(--gold)}
-    .category .ico{font-size:25px;color:var(--gold)} .category h3{font-size:14px;margin:13px 0 5px}.category p{font-size:11px;color:var(--muted);margin:0}
+    .category .ico{font-size:25px;color:var(--gold)}
+    .category h3{font-size:14px;margin:13px 0 5px}
+    .category p{font-size:11px;color:var(--muted);margin:0}
     .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 22px}
     .search{flex:1;min-width:210px;background:#111;border:1px solid var(--line);border-radius:12px;padding:13px 15px;color:white;outline:none}
-    .filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:#111;border:1px solid var(--line);color:#d8cfbd;padding:10px 13px;border-radius:999px;cursor:pointer;font-size:12px}.filter.active,.filter:hover{background:var(--gold);color:#171107}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}
+    .filter{background:#111;border:1px solid var(--line);color:#d8cfbd;padding:10px 13px;border-radius:999px;cursor:pointer;font-size:12px}
+    .filter.active,.filter:hover{background:var(--gold);color:#171107}
     .products{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
     .product{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:linear-gradient(145deg,#17140f,#0e0e0d);display:flex;flex-direction:column}
     .cover{height:174px;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(234,185,79,.22),transparent 52%),linear-gradient(135deg,#21190b,#090909);border-bottom:1px solid var(--line);position:relative}
@@ -48,26 +58,59 @@
     .cover:after{content:attr(data-type);position:absolute;bottom:17px;font-size:9px;letter-spacing:3px;color:#d7c49a}
     .product-body{padding:19px;display:flex;flex-direction:column;flex:1}
     .tag{font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-weight:800}
-    .product h3{margin:9px 0 7px;font-size:19px}.product p{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 17px;flex:1}
-    .buyrow{display:flex;align-items:center;justify-content:space-between;gap:12px}.price{font-size:20px;font-weight:900;color:var(--gold2)}
+    .product h3{margin:9px 0 7px;font-size:19px}
+    .product p{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 17px;flex:1}
+    .buyrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .price{font-size:16px;font-weight:900;color:var(--gold2)}
     .buy{padding:11px 15px;border-radius:10px;background:var(--gold);color:#171107;font-weight:800;font-size:12px}
-    .buy.disabled{background:#29251d;color:#9c927f;cursor:not-allowed}
     .how{background:linear-gradient(180deg,#0a0a09,#11100c);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-    .step{padding:24px;border:1px solid var(--line);border-radius:15px;background:#100f0c}.step b{color:var(--gold);font-size:26px}.step h3{margin:13px 0 7px}.step p{color:var(--muted);font-size:13px;line-height:1.6;margin:0}
-    .delivery{display:grid;grid-template-columns:1fr 1fr;gap:18px}.delivery-card{padding:25px;border-radius:16px;background:#11100d;border:1px solid var(--line)}.delivery-card h3{color:var(--gold2);margin-top:0}.delivery-card p{color:var(--muted);font-size:13px;line-height:1.7}
-    .cta{padding:42px;border:1px solid var(--gold);border-radius:20px;text-align:center;background:radial-gradient(ellipse at center,rgba(234,185,79,.15),transparent 65%),#0d0c09}.cta h2{font-size:clamp(25px,4vw,36px);margin:0 0 10px}.cta p{color:var(--muted);margin:0 0 22px}
-    footer{padding:30px 0;border-top:1px solid var(--line);color:#928a7b;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .step{padding:24px;border:1px solid var(--line);border-radius:15px;background:#100f0c}
+    .step b{color:var(--gold);font-size:26px}
+    .step h3{margin:13px 0 7px}
+    .step p{color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+    .delivery{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .delivery-card{padding:25px;border-radius:16px;background:#11100d;border:1px solid var(--line)}
+    .delivery-card h3{color:var(--gold2);margin-top:0}
+    .delivery-card p{color:var(--muted);font-size:13px;line-height:1.7}
+    .cta{padding:42px;border:1px solid var(--gold);border-radius:20px;text-align:center;background:radial-gradient(ellipse at center,rgba(234,185,79,.15),transparent 65%),#0d0c09}
+    .cta h2{font-size:clamp(25px,4vw,36px);margin:0 0 10px}
+    .cta p{color:var(--muted);margin:0 0 22px}
+    footer{padding:30px 0;border-top:1px solid var(--line);color:#928a7b;font-size:11px}
+    .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .notice{font-size:11px;color:#8f8779;line-height:1.6;margin-top:20px}
-    @media(max-width:850px){.links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#090909;border-bottom:1px solid var(--line);flex-direction:column}.links.open{display:flex}.menu{display:block}.nav-cta{display:none}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:560px){.hero{padding:65px 0 55px}.hero:after{font-size:230px;right:-12%;top:18%}.lead{font-size:15px}.categories{grid-template-columns:repeat(2,1fr)}.products,.steps,.delivery{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:9px}.cover{height:155px}.trust{gap:12px}}
+    @media(max-width:850px){
+      .links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#090909;border-bottom:1px solid var(--line);flex-direction:column}
+      .links.open{display:flex}
+      .menu{display:block}
+      .nav-cta{display:none}
+      .categories{grid-template-columns:repeat(3,1fr)}
+      .products{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:560px){
+      .hero{padding:65px 0 55px}
+      .hero:after{font-size:230px;right:-12%;top:18%}
+      .lead{font-size:15px}
+      .categories{grid-template-columns:repeat(2,1fr)}
+      .products,.steps,.delivery{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:9px}
+      .cover{height:155px}
+      .trust{gap:12px}
+    }
   </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#inicio"><span class="mark"><span> A </span></span><span>ASTRONIX<small>LOJA DIGITAL</small></span></a>
-    <nav class="links" id="links"><a href="#inicio">Início</a><a href="#categorias">Categorias</a><a href="#produtos">Produtos</a><a href="#como-funciona">Como funciona</a><a href="#sobre">Sobre</a></nav>
+    <a class="brand" href="#inicio"><span class="mark"><span>A</span></span><span>ASTRONIX<small>LOJA DIGITAL</small></span></a>
+    <nav class="links" id="links">
+      <a href="#inicio">Início</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
     <a class="nav-cta" href="#produtos">Explorar produtos ↗</a>
     <button class="menu" id="menu" aria-label="Abrir menu">☰</button>
   </div>
@@ -79,14 +122,24 @@
       <div class="eyebrow">Bem-vindo à ASTRONIX</div>
       <h1>SUA JORNADA<br>COMEÇA <em>AQUI.</em></h1>
       <p class="lead">E-books, cursos, planners, templates e ferramentas digitais para ajudar você a aprender, criar e organizar suas ideias.</p>
-      <div class="hero-actions"><a class="btn" href="#produtos">Explorar produtos →</a><a class="btn secondary" href="#como-funciona">Como funciona</a></div>
-      <div class="trust"><span>Compra pelo checkout oficial</span><span>Produtos digitais</span><span>Suporte ao cliente</span></div>
+      <div class="hero-actions">
+        <a class="btn" href="#produtos">Explorar produtos →</a>
+        <a class="btn secondary" href="#como-funciona">Como funciona</a>
+      </div>
+      <div class="trust">
+        <span>Compra pelo checkout oficial</span>
+        <span>Produtos digitais</span>
+        <span>Suporte ao cliente</span>
+      </div>
     </div>
   </section>
 
   <section id="categorias">
     <div class="wrap">
-      <div class="section-head"><div><div class="eyebrow">Encontre o que precisa</div><h2>Explore por categoria</h2></div><p>Conteúdo digital em um só lugar.</p></div>
+      <div class="section-head">
+        <div><div class="eyebrow">Encontre o que precisa</div><h2>Explore por categoria</h2></div>
+        <p>Conteúdo digital em um só lugar.</p>
+      </div>
       <div class="categories">
         <a class="category" href="#produtos" data-jump="ebook"><div class="ico">▤</div><h3>E-books</h3><p>Conhecimento em PDF</p></a>
         <a class="category" href="#produtos" data-jump="curso"><div class="ico">▶</div><h3>Cursos</h3><p>Aprenda no seu ritmo</p></a>
@@ -100,84 +153,178 @@
 
   <section id="produtos">
     <div class="wrap">
-      <div class="section-head"><div><div class="eyebrow">Loja ASTRONIX</div><h2>Nossos produtos</h2></div><p>Escolha seu próximo passo.</p></div>
+      <div class="section-head">
+        <div><div class="eyebrow">Loja ASTRONIX</div><h2>Nossos produtos</h2></div>
+        <p>Escolha seu próximo passo.</p>
+      </div>
+
       <div class="toolbar">
         <input class="search" id="search" type="search" placeholder="Buscar um produto...">
         <div class="filters">
           <button class="filter active" data-filter="todos">Todos</button>
-          <button class="filter" data-filter="planner">Planners</button>
-          <button class="filter" data-filter="ebook">E-books</button>
-          <button class="filter" data-filter="curso">Cursos</button>
-          <button class="filter" data-filter="template">Templates</button>
+          <button class="filter" data-filter="curso">Produtos digitais</button>
         </div>
       </div>
+
       <div class="products" id="productGrid">
-        <article class="product" data-category="planner" data-name="astronix life os planner organização produtividade">
-          <div class="cover" data-type="PLANNER DIGITAL"></div>
-          <div class="product-body"><span class="tag">Planner digital</span><h3>ASTRONIX LIFE OS</h3><p>Um planner digital para ajudar você a organizar tarefas, rotina e objetivos em um só lugar.</p><div class="buyrow"><span class="price">R$ 9,90</span><a class="buy" href="https://pay.cakto.com.br/a44hdfo_1250534" target="_blank" rel="noopener">Comprar agora ↗</a></div></div>
+
+        <article class="product" data-category="curso" data-name="liberdade financeira mdl">
+          <div class="cover" data-type="PRODUTO DIGITAL"></div>
+          <div class="product-body">
+            <span class="tag">Produto digital</span>
+            <h3>LIBERDADE FINANCEIRA MDL</h3>
+            <p>Conteúdo educativo sobre marketing digital, planejamento e estratégias para trabalhar com produtos digitais.</p>
+            <div class="buyrow">
+              <span class="price">Comprar na Cakto</span>
+              <a class="buy" href="https://pay.cakto.com.br/pwqa29w?affiliate=8h7xLbwz" target="_blank" rel="noopener noreferrer">COMPRAR AGORA ↗</a>
+            </div>
+          </div>
         </article>
-        <article class="product" data-category="ebook" data-name="marketing digital do zero ebook">
-          <div class="cover" data-type="E-BOOK"></div>
-          <div class="product-body"><span class="tag">E-book</span><h3>Marketing Digital do Zero</h3><p>Material introdutório para conhecer conceitos de marketing digital e começar a estudar o tema.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
+
+        <article class="product" data-category="curso" data-name="produto digital 2">
+          <div class="cover" data-type="PRODUTO DIGITAL"></div>
+          <div class="product-body">
+            <span class="tag">Produto digital</span>
+            <h3>Produto digital 2</h3>
+            <p>Acesse a página oficial da Cakto para conferir a descrição, o conteúdo e as condições deste produto.</p>
+            <div class="buyrow">
+              <span class="price">Comprar na Cakto</span>
+              <a class="buy" href="https://cakto.app/AbtYRgv/?affiliate=kehLPFab" target="_blank" rel="noopener noreferrer">COMPRAR AGORA ↗</a>
+            </div>
+          </div>
         </article>
-        <article class="product" data-category="curso" data-name="empreendedor digital curso">
-          <div class="cover" data-type="CURSO ONLINE"></div>
-          <div class="product-body"><span class="tag">Curso online</span><h3>Empreendedor Digital</h3><p>Conteúdo educativo sobre ideias, planejamento e ferramentas para projetos digitais.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
+
+        <article class="product" data-category="curso" data-name="produto digital 3">
+          <div class="cover" data-type="PRODUTO DIGITAL"></div>
+          <div class="product-body">
+            <span class="tag">Produto digital</span>
+            <h3>Produto digital 3</h3>
+            <p>Acesse a página oficial da Cakto para conferir a descrição, o conteúdo e as condições deste produto.</p>
+            <div class="buyrow">
+              <span class="price">Comprar na Cakto</span>
+              <a class="buy" href="https://cakto.app/88K3Hki/?affiliate=9jRz92q4" target="_blank" rel="noopener noreferrer">COMPRAR AGORA ↗</a>
+            </div>
+          </div>
         </article>
-        <article class="product" data-category="template" data-name="kit templates criativos">
-          <div class="cover" data-type="PACK DE TEMPLATES"></div>
-          <div class="product-body"><span class="tag">Templates</span><h3>Kit de Templates</h3><p>Modelos editáveis para apoiar a criação de conteúdos e materiais digitais.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
+
+        <article class="product" data-category="curso" data-name="produto digital 4">
+          <div class="cover" data-type="PRODUTO DIGITAL"></div>
+          <div class="product-body">
+            <span class="tag">Produto digital</span>
+            <h3>Produto digital 4</h3>
+            <p>Acesse a página oficial da Cakto para conferir a descrição, o conteúdo e as condições deste produto.</p>
+            <div class="buyrow">
+              <span class="price">Comprar na Cakto</span>
+              <a class="buy" href="https://pay.cakto.com.br/sy9g3s5?affiliate=A49pFQsu" target="_blank" rel="noopener noreferrer">COMPRAR AGORA ↗</a>
+            </div>
+          </div>
         </article>
-        <article class="product" data-category="ferramenta" data-name="planilha organização ferramenta">
-          <div class="cover" data-type="FERRAMENTA DIGITAL"></div>
-          <div class="product-body"><span class="tag">Ferramenta</span><h3>Planilha de Organização</h3><p>Uma ferramenta prática para acompanhar tarefas, metas e atividades.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
-        </article>
-        <article class="product" data-category="arte" data-name="pack criativo artes digitais">
-          <div class="cover" data-type="ARTES DIGITAIS"></div>
-          <div class="product-body"><span class="tag">Artes digitais</span><h3>Pack Criativo</h3><p>Recursos gráficos para projetos pessoais e criação de conteúdo.</p><div class="buyrow"><span class="price">Em breve</span><span class="buy disabled">Em preparação</span></div></div>
-        </article>
+
       </div>
-      <p class="notice">Atenção: no momento, somente o ASTRONIX LIFE OS possui link de checkout informado. Os demais itens são demonstrações do catálogo e não estão disponíveis para compra. Valores, conteúdos e formas de entrega dos próximos produtos serão publicados após configuração.</p>
+
+      <p class="notice">Os quatro produtos acima direcionam para suas respectivas páginas de compra na Cakto. Confira descrição, conteúdo, preço e condições de entrega na página de cada produto antes de finalizar o pedido.</p>
     </div>
   </section>
 
   <section class="how" id="como-funciona">
     <div class="wrap">
-      <div class="section-head"><div><div class="eyebrow">Simples e direto</div><h2>Como funciona a compra</h2></div></div>
+      <div class="section-head">
+        <div><div class="eyebrow">Simples e direto</div><h2>Como funciona a compra</h2></div>
+      </div>
       <div class="steps">
         <div class="step"><b>01</b><h3>Escolha seu produto</h3><p>Confira a descrição e veja se o material atende ao que você procura.</p></div>
-        <div class="step"><b>02</b><h3>Finalize o pagamento</h3><p>Quando disponível, o botão leva ao checkout oficial do produto.</p></div>
-        <div class="step"><b>03</b><h3>Receba o acesso</h3><p>A entrega será feita pelo formato informado na página do produto: arquivo digital ou área de membros.</p></div>
+        <div class="step"><b>02</b><h3>Finalize o pagamento</h3><p>O botão leva à página de compra correspondente na Cakto.</p></div>
+        <div class="step"><b>03</b><h3>Receba o acesso</h3><p>Confira na página de cada produto as informações sobre entrega e acesso.</p></div>
       </div>
     </div>
   </section>
 
   <section id="sobre">
     <div class="wrap">
-      <div class="section-head"><div><div class="eyebrow">Nossa proposta</div><h2>Digital para ir mais longe</h2></div></div>
-      <div class="delivery">
-        <div class="delivery-card"><h3>↓ Arquivos para baixar</h3><p>E-books, planners, templates e outros materiais digitais poderão ser entregues por link de download, conforme as condições de cada produto.</p></div>
-        <div class="delivery-card"><h3>◎ Área de membros</h3><p>Cursos e conteúdos organizados poderão ficar disponíveis em uma área de acesso, com instruções de entrada enviadas após a compra.</p></div>
+      <div class="section-head">
+        <div><div class="eyebrow">Nossa proposta</div><h2>Digital para ir mais longe</h2></div>
       </div>
-      <p class="notice">A forma de entrega varia conforme o produto. Não anuncie acesso imediato, suporte 24 horas ou acesso vitalício sem que esses serviços estejam realmente configurados e disponíveis.</p>
+      <div class="delivery">
+        <div class="delivery-card">
+          <h3>↓ Arquivos para baixar</h3>
+          <p>E-books, planners, templates e outros materiais digitais poderão ser entregues por link de download, conforme as condições de cada produto.</p>
+        </div>
+        <div class="delivery-card">
+          <h3>◎ Área de membros</h3>
+          <p>Cursos e conteúdos organizados poderão ficar disponíveis em uma área de acesso, com instruções de entrada enviadas após a compra.</p>
+        </div>
+      </div>
+      <p class="notice">A forma de entrega varia conforme o produto. Consulte as informações na respectiva página de compra.</p>
     </div>
   </section>
 
   <section>
-    <div class="wrap"><div class="cta"><div class="eyebrow">ASTRONIX DIGITAL STORE</div><h2>Aprenda. Crie. Conquiste.</h2><p>Encontre recursos digitais para transformar suas ideias em ação.</p><a class="btn" href="#produtos">Conhecer a loja →</a></div></div>
+    <div class="wrap">
+      <div class="cta">
+        <div class="eyebrow">ASTRONIX DIGITAL STORE</div>
+        <h2>Aprenda. Crie. Conquiste.</h2>
+        <p>Encontre recursos digitais para transformar suas ideias em ação.</p>
+        <a class="btn" href="#produtos">Conhecer a loja →</a>
+      </div>
+    </div>
   </section>
 </main>
-<footer><div class="wrap foot"><span>© 2026 ASTRONIX. Todos os direitos reservados.</span><span>Loja de produtos digitais</span></div></footer>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 ASTRONIX. Todos os direitos reservados.</span>
+    <span>Loja de produtos digitais</span>
+  </div>
+</footer>
+
 <script>
-  const menu=document.getElementById('menu'), links=document.getElementById('links');
-  menu.addEventListener('click',()=>links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-  let current='todos';
-  const cards=[...document.querySelectorAll('.product')], search=document.getElementById('search');
-  function filterCards(){const q=search.value.toLowerCase().trim();cards.forEach(card=>{const okCat=current==='todos'||card.dataset.category===current;const okText=card.dataset.name.includes(q)||card.innerText.toLowerCase().includes(q);card.style.display=okCat&&okText?'flex':'none';});}
-  document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');current=btn.dataset.filter;filterCards();}));
-  search.addEventListener('input',filterCards);
-  document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',()=>{current=a.dataset.jump;document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b.dataset.filter===current)});filterCards();}));
+  const menu = document.getElementById('menu');
+  const links = document.getElementById('links');
+
+  menu.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+
+  let current = 'todos';
+
+  const cards = [...document.querySelectorAll('.product')];
+  const search = document.getElementById('search');
+
+  function filterCards() {
+    const q = search.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+      const okCat = current === 'todos' || card.dataset.category === current;
+      const okText = card.dataset.name.includes(q) || card.innerText.toLowerCase().includes(q);
+
+      card.style.display = okCat && okText ? 'flex' : 'none';
+    });
+  }
+
+  document.querySelectorAll('.filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      current = btn.dataset.filter;
+      filterCards();
+    });
+  });
+
+  search.addEventListener('input', filterCards);
+
+  document.querySelectorAll('[data-jump]').forEach(a => {
+    a.addEventListener('click', () => {
+      current = 'curso';
+      document.querySelectorAll('.filter').forEach(b => {
+        b.classList.toggle('active', b.dataset.filter === current);
+      });
+      filterCards();
+    });
+  });
 </script>
 </body>
 </html>
